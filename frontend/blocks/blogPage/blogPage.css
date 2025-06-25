@@ -1,0 +1,11 @@
+.blog-section {
+    padding: 4rem 2rem;
+}
+
+.blog-section__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}

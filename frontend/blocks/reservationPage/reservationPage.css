@@ -1,0 +1,49 @@
+.reservations {
+    padding: 4rem 2rem;
+    background-color: var(--color-black);
+}
+
+.reservations__container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reservations__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-light);
+}
+
+.form__input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.form__input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}

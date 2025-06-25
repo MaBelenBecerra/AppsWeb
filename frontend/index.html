@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qitchen - Restaurante de Sushi</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <a href="/" class="header__logo">QITCHEN</a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#menu" class="header__nav-link">Menu</a></li>
+                    <li><a href="#about" class="header__nav-link">About</a></li>
+                    <li><a href="#contact" class="header__nav-link">Contact</a></li>
+                    <li><a href="#blog" class="header__nav-link">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#cart" class="header__action-link header__cart-icon" id="cart-icon">
+                    🛒
+                    <span class="header__cart-badge" id="cart-badge">0</span>
+                </a>
+                <a href="#login" class="header__action-link header__action-link--button" id="login-link">Login</a>
+            </div>
+            <button class="header__hamburger-menu" id="hamburger-menu">
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <nav class="mobile-nav__menu">
+            <ul class="mobile-nav__list">
+                <li><a href="#menu" class="mobile-nav__link">Menu</a></li>
+                <li><a href="#about" class="mobile-nav__link">About</a></li>
+                <li><a href="#contact" class="mobile-nav__link">Contact</a></li>
+                <li><a href="#blog" class="mobile-nav__link">Blog</a></li>
+                <li><a href="#cart" class="mobile-nav__link">Cart</a></li>
+                <li><a href="#login" class="mobile-nav__link mobile-nav__link--button">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-panel__header">
+            <h3 class="cart-panel__title">Tu Pedido</h3>
+            <button class="cart-panel__close" id="cart-panel-close">&times;</button>
+        </div>
+        <div class="cart-panel__body" id="cart-items-container">
+            <!-- Los productos del carrito se insertarán aquí -->
+            <p class="cart-panel__empty-message">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <button class="button button--primary">Realizar Pedido</button>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">El Arte del Sushi, Redefinido.</h1>
+                <p class="hero__subtitle">Descubre una experiencia culinaria única en Qitchen.</p>
+                <a href="#reservations" class="button button--primary">Reservar Mesa</a>
+            </div>
+        </section>
+
+        <!-- Featured Menu Section -->
+        <section class="featured-menu">
+            <h2 class="section-title">Nuestro Menú Destacado</h2>
+            <div class="menu-grid">
+                <article class="card">
+                    <img src="https://source.unsplash.com/random/400x300/?sushi,dragon" alt="Dragon Roll" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Dragon Roll</h3>
+                        <p class="card__description">Anguila, pepino y aguacate, cubierto con finas láminas de aguacate.</p>
+                        <p class="card__price">18.50</p>
+                        <button class="button button--primary js-add-to-cart" data-id="1" data-name="Dragon Roll" data-price="18.50">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://source.unsplash.com/random/400x300/?sushi,nigiri" alt="Nigiri de Salmón" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Nigiri de Salmón</h3>
+                        <p class="card__description">Fresco salmón sobre una base de arroz de sushi perfectamente sazonado.</p>
+                        <p class="card__price">12.00</p>
+                        <button class="button button--primary js-add-to-cart" data-id="2" data-name="Nigiri de Salmón" data-price="12.00">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://source.unsplash.com/random/400x300/?sushi,maki" alt="Spicy Tuna Maki" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Spicy Tuna Maki</h3>
+                        <p class="card__description">Atún picante, pepino y un toque de sriracha, envuelto en alga nori.</p>
+                        <p class="card__price">15.75</p>
+                        <button class="button button--primary js-add-to-cart" data-id="3" data-name="Spicy Tuna Maki" data-price="15.75">Añadir al Carrito</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Reservations Section -->
+        <section class="reservations" id="reservations">
+            <div class="reservations__container">
+                <h2 class="section-title">Hacer una Reserva</h2>
+                <form class="reservations__form">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="contact" class="form__label">Número de Contacto</label>
+                        <input type="tel" id="contact" name="contact" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="date" class="form__label">Fecha</label>
+                        <input type="date" id="date" name="date" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="time" class="form__label">Hora</label>
+                        <input type="time" id="time" name="time" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="guests" class="form__label">Número de Comensales</label>
+                        <input type="number" id="guests" name="guests" class="form__input" min="1" max="10" required>
+                    </div>
+                    <button type="submit" class="button button--primary">Solicitar Reserva</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="info-section" id="about">
+            <div class="info-section__container">
+                <img src="https://source.unsplash.com/random/800x600/?restaurant,interior" alt="Interior del restaurante Qitchen" class="info-section__image">
+                <div class="info-section__content">
+                    <h2 class="section-title">Sobre Nosotros</h2>
+                    <p class="info-section__text">
+                        En Qitchen, fusionamos la tradición milenaria del sushi con un toque de innovación y elegancia. Nuestro compromiso es ofrecer una experiencia culinaria inolvidable, utilizando solo los ingredientes más frescos y de la más alta calidad en un ambiente moderno y acogedor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="info-section info-section--dark" id="contact">
+            <div class="info-section__container info-section__container--reversed">
+                <img src="https://source.unsplash.com/random/800x600/?sushi,chef" alt="Chef de Qitchen preparando sushi" class="info-section__image">
+                <div class="info-section__content">
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="info-section__text">
+                        <strong>Dirección:</strong> Av. Sushi 123, Gourmet City<br>
+                        <strong>Teléfono:</strong> +123 456 7890<br>
+                        <strong>Email:</strong> reservas@qitchen.com
+                    </p>
+                    <p class="info-section__text"><strong>Horario:</strong> Mar-Dom, 18:00 - 23:00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p>&copy; 2024 Qitchen. Todos los derechos reservados.</p>
+            <ul class="footer__links">
+                <li><a href="#privacy" class="footer__link">Política de Privacidad</a></li>
+                <li><a href="#terms" class="footer__link">Términos y Condiciones</a></li>
+            </ul>
+            <div class="footer__language-selector">
+                <select name="language" id="language-select">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+.cart-panel {
+    position: fixed;
+    top: 0;
+        right: -100%;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--color-dark);
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-panel.is-active {
+    right: 0;
+}
+
+.cart-panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.cart-panel__title {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.cart-panel__close {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cart-panel__body {
+    flex-grow: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.cart-panel__empty-message {
+    color: var(--color-light);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-item__details {
+    flex-grow: 1;
+}
+
+.cart-item__name {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.cart-item__quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-item__quantity-btn {
+    background-color: #333;
+    border: none;
+    color: var(--color-white);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-item__price {
+    font-weight: 700;
+}
+
+.cart-item__remove-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-panel__footer {
+    padding: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.cart-panel__subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cart-panel__footer .button {
+    width: 100%;
+}
